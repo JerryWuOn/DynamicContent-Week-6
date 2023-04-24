@@ -6,7 +6,13 @@ export default function Survey() {
     const [isActiveOne, setIsActiveOne] = useState(true);
     const[isActiveTwo, setIsActiveTwo] = useState(false)
 
-    const passName = (event)
+    const passName = (event) => {
+        if(event.key === "Enter") {
+            console.log("enter")
+            setIsActiveOne(false);
+            setIsActiveTwo(true);
+        }
+    }
     return(
         <div>
             <div style={{display: isActiveOne ? 'block' : 'none'}}>
@@ -18,10 +24,9 @@ export default function Survey() {
                     onKeyDown={passName}
                     type="text"
                 />
-
             </div>
             <div style={{display: isActiveTwo ? 'block': 'none'}}>
-
+                <Start passName={name}/>
             </div>
         </div>
     )

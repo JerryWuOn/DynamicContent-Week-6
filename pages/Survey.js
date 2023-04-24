@@ -24,7 +24,6 @@ export default function Survey() {
                     onKeyDown={passName}
                     type="text"
                 />
-
             </div>
             <div style={{display: isActiveTwo ? 'block': 'none'}}>
                 <Start passName={name}/>
